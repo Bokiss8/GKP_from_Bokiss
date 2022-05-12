@@ -1,0 +1,63 @@
+{% extends "my_gkp/layout.html" %}
+{% load static %}
+
+{% block script %}
+     <script src="{% static 'my_gkp/inbox39.js' %}" type="module"></script>
+{% endblock %}
+
+{% block body %}
+<div class="indicator">
+    <form class="contact_form" action="#" method="post" name="contact_form">
+        {% csrf_token %}
+        <ul>
+            <li>
+                 <h2 id="name_h2">Внесення показників лічильника по електроенергії</h2>
+                 <span class="required_notification">* Поля, обовязкові для заповнення</span>
+            </li>
+            
+             <!--   <p id="message_ok"><b>{{ message_ok }}</b></p>
+                <p id="message_err"><b>{{ message_err }}</b></p>
+                -->
+            <li>
+                <h6 id="name_h6">За період</h6>
+                з: <input type="date"  name="date_start" placeholder="date start" id="datestart" required />
+                &nbsp; &nbsp;
+                по: <input type="date"  name="date_end" placeholder="date end" id="dateend" required />
+                <input type="number"  name="tarif" placeholder="тариф" id="tarif" step="0.01" value="{{ last_tarif }}" required />
+            </li>
+            
+            <li>
+                1 зона:
+                <div class="tiktok">
+                <input type="number"  name="indicator_last" placeholder="попередній" id="indicator_last" value="{{ last_indicator }}" required />
+                <input type="number"  name="indicator_new" placeholder="поточний" id="indicator_new" required />
+                <input type="number"  name="koeficient_1" placeholder="тариф" id="tarif" step="0.01" value="1.5" title="зонний коефіцієнт" disabled/>
+                <input type="hidden" id="user_id" name="userid" value="{{ user.id }}">
+                </div>
+            </li>
+
+            <li>
+                2 зона:
+                <div class="tiktok">
+                <input type="number"  name="indicator_last_2" placeholder="попередній" id="indicator_last_2" value="{{ last_indicator_2 }}" required />
+                <input type="number"  name="indicator_new_2" placeholder="поточний" id="indicator_new_2" required />
+                <input type="number"  name="koeficient_2" placeholder="тариф" id="tarif" step="0.01" value="1.0" title="зонний коефіцієнт" disabled/>
+                </div>
+            </li>
+            <li>
+                3 зона:
+                <div class="tiktok">
+                <input type="number"  name="indicator_last_3" placeholder="попередній" id="indicator_last_3" value="{{ last_indicator_3 }}" required />
+                <input type="number"  name="indicator_new_3" placeholder="поточний" id="indicator_new_3" required />
+                <input type="number"  name="koeficient_3" placeholder="тариф" id="tarif" step="0.01" value="0.4" title="зонний коефіцієнт" disabled/>
+                </div>
+            </li>
+    
+            <!-- You can write hire ehat you want Внесення показників лічильника-->
+    
+                <button class="submit" type="submit">Зберегти</button>
+            </li>
+        </ul>
+    </form>
+    </div>
+    {% endblock %}

@@ -1,0 +1,378 @@
+@media (min-width: 501px) {
+    
+	.indicator {
+		font: 14px/21px "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif; 
+		background-color: white;
+		padding-bottom: 10px;
+		
+	}
+   
+}
+@media screen and (max-width: 500px) {
+    
+	.indicator {
+		font: 14px/21px "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif; 
+		background-color: white;
+		/*width: 100%;*/
+		display: inline-block;
+		/*height: 100vh;
+		/*padding-top: 2vh;*/
+		padding-bottom: 10px;
+	}
+   
+}
+/*=======================================================================================================*/
+/* === Remove input autofocus webkit === */
+*:focus {outline: none;}
+
+/* === Form Typography === */
+
+.tiktok {
+	padding: 10px;
+	padding-left: 10px;
+	background-color: #20911e;
+	display: flex;
+    flex-direction: row;
+}
+.tiktok_title {
+	padding: 10px;
+	padding-left: 10px;
+	background-color: #555;
+	display: flex;
+    flex-direction: row;
+}
+.contact_form h2, .contact_form_2 h2, .contact_form_3 h2, .contact_form label {font-family:Georgia, Times, "Times New Roman", serif;}
+.form_hint, .required_notification {font-size: 11px;}
+
+/* === List Styles === */
+.contact_form ul {
+    width:750px;
+    list-style-type:none;
+	list-style-position:outside;
+	margin:0 auto;
+	padding:0px;
+}
+.contact_form_2 ul {
+    width:950px;
+    list-style-type:none;
+	list-style-position:outside;
+	margin:0 auto;
+	padding:0px;
+}
+.contact_form_3 ul {
+    width:850px;
+    list-style-type:none;
+	list-style-position:outside;
+	margin:0 auto;
+	padding:0px;
+}
+.contact_form li{
+	margin-top: 0px;
+	margin-right: 12px;
+	padding:12px; 
+	border-bottom:1px;
+	position:relative;
+} 
+.contact_form_2 li{
+	margin-top: 0px;
+	margin-right: 12px;
+	padding:12px; 
+	border-bottom:1px;
+	position:relative;
+}
+.contact_form_3 li{
+	margin-top: 0px;
+	margin-right: 12px;
+	padding:12px; 
+	border-bottom:1px;
+	position:relative;
+} 
+#listgas_title{
+	margin-top: 15px;
+	margin-right: 12px;
+	padding:1px; 
+	border-bottom:1px;
+	position:relative;
+} 
+#listgas{
+	margin-top: 1px;
+	margin-right: 12px;
+	padding:1px; 
+	border-bottom:1px;
+	position:relative;
+} 
+.contact_form li:first-child, .contact_form li:last-child, .contact_form_2 li:first-child, .contact_form_2 li:last-child, .contact_form_3 li:first-child, .contact_form_3 li:last-child {
+	border-bottom:1px solid #777;
+	margin-right: 12px;
+}
+
+/* === Form Header === */
+.contact_form h2, .contact_form_2 h2, .contact_form_3 h2 {
+	color: rgb(0, 0, 0);
+	margin:0;
+	display: inline;
+    font-family: Georgia, Times, "Times New Roman", serif;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+h2 {
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.required_notification {
+	color:#d45252; 
+	margin:5px 0 0 0; 
+	display:inline;
+	float:right;
+}
+
+/* === Form Elements === */
+.contact_form input {
+	height:20px; 
+	width:220px;
+	margin-left: 12px;
+}
+#tarif {
+	width: 130px;
+	padding-left:5px;
+	padding-right: 20px;
+}
+#indicator_last {
+	padding-left:5px;
+	padding-right: 20px;
+}
+#indicator_new {
+	padding-left:5px;
+	padding-right: 20px;
+}
+#indicator_last_2 {
+	padding-left:5px;
+	padding-right: 20px;
+}
+#indicator_new_2 {
+	padding-left:5px;
+	padding-right: 20px;
+}
+#datestart {
+	background-color: #d2f6b4;
+	padding-left:5px;
+	padding-right: 20px;
+}
+#dateend {
+	background-color: #d2f6b4;
+	padding-left:5px;
+	padding-right: 20px;
+}
+.contact_form textarea {padding:8px; width:300px;}
+.contact_form button {margin-top:12px; margin-left:320px;}
+
+	/* form element visual styles */
+	.contact_form input, .contact_form textarea { 
+		border:1px solid #aaa;
+		box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset;
+		border-radius:2px;
+		padding-right:30px;
+		-moz-transition: padding .25s; 
+		-webkit-transition: padding .25s; 
+		-o-transition: padding .25s;
+		transition: padding .25s;
+	}
+	.contact_form input:focus, .contact_form textarea:focus {
+		background: #fff; 
+		border:1px solid #555; 
+		box-shadow: 0 0 3px #aaa; 
+		padding-right:70px;
+	}
+
+/* === HTML5 validation styles === */	
+.contact_form input:required, .contact_form textarea:required {
+	background: #fff url(images/red_asterisk.png) no-repeat 98% center;
+}
+.contact_form input:required:valid, .contact_form textarea:required:valid {
+	background: #fff url(images/valid.png) no-repeat 98% center;
+	box-shadow: 0 0 5px #5cd053;
+	border-color: #28921f;
+}
+.contact_form input:focus:invalid, .contact_form textarea:focus:invalid {
+	background: #fff url(images/invalid.png) no-repeat 98% center;
+	box-shadow: 0 0 5px #d45252;
+	border-color: #b03535
+}
+
+/* === Form hints === */
+.form_hint {
+	background: #d45252;
+	border-radius: 3px 3px 3px 3px;
+	color: white;
+	margin-left:8px;
+	padding: 1px 6px;
+	z-index: 999; /* hints stay above all other elements */
+	position: absolute; /* allows proper formatting if hint is two lines */
+	display: none;
+}
+.form_hint::before {
+	content: "\25C0";
+	color:#d45252;
+	position: absolute;
+	top:1px;
+	left:-6px;
+}
+.contact_form input:focus + .form_hint {display: inline;}
+.contact_form input:required:valid + .form_hint {background: #28921f;}
+.contact_form input:required:valid + .form_hint::before {color:#28921f;}
+	
+/* === Button Style === */
+button.submit {
+	background-color: #68b12f;
+	background: -webkit-gradient(linear, left top, left bottom, from(#68b12f), to(#50911e));
+	background: -webkit-linear-gradient(top, #68b12f, #50911e);
+	background: -moz-linear-gradient(top, #68b12f, #50911e);
+	background: -ms-linear-gradient(top, #68b12f, #50911e);
+	background: -o-linear-gradient(top, #68b12f, #50911e);
+	background: linear-gradient(top, #68b12f, #50911e);
+	border: 1px solid #509111;
+	border-bottom: 1px solid #5b992b;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+	box-shadow: inset 0 1px 0 0 #9fd574;
+	-webkit-box-shadow: 0 1px 0 0 #9fd574 inset ;
+	-moz-box-shadow: 0 1px 0 0 #9fd574 inset;
+	-ms-box-shadow: 0 1px 0 0 #9fd574 inset;
+	-o-box-shadow: 0 1px 0 0 #9fd574 inset;
+	color: white;
+	font-weight: bold;
+	padding: 6px 20px;
+	text-align: center;
+	text-shadow: 0 -1px 0 #396715;
+}
+button.submit:hover {
+	opacity:.85;
+	cursor: pointer; 
+}
+button.submit:active {
+	border: 1px solid #20911e;
+	box-shadow: 0 0 10px 5px #356b0b inset; 
+	-webkit-box-shadow:0 0 10px 5px #356b0b inset ;
+	-moz-box-shadow: 0 0 10px 5px #356b0b inset;
+	-ms-box-shadow: 0 0 10px 5px #356b0b inset;
+	-o-box-shadow: 0 0 10px 5px #356b0b inset;
+	
+}
+
+/*body {
+	background: url(images/123.png);
+  }*/
+  
+  .text {
+	top: 50%;
+	left: 0px;
+	width: 100%;
+	position: absolute;
+	text-align: center;
+	-webkit-transform: translateY(-50%);
+			transform: translateY(-50%);
+	font-family: 'Oswald', sans-serif;
+	line-height: 60px;
+  }
+  .text span {
+	color: #fff;
+	font-size: 70px;
+	font-weight: bold;
+	display: inline-block;
+	letter-spacing: 5px;
+	-webkit-transition: 2s;
+	transition: 2s;
+	text-shadow: 0px 0px 0px rgb(63, 2, 2);
+	position: relative;
+	top: 0px;
+	left: 0px;
+	cursor: default;
+  }
+  .text span:hover {
+	text-shadow: -8px 8px 0px rgb(63, 2, 2);
+	-webkit-transition: 0.3s;
+	transition: 0.3s;
+	top: -8px;
+	left: 8px;
+  }
+  .text span.space {
+	width: 20px;
+	height: 100%;
+  }
+#message_err {
+    color: rgb(160, 19, 9);
+	text-align: center;
+}
+#message_ok {
+    color: rgb(23, 95, 5);
+	text-align: center;
+}
+.gas_title {
+	background-color: white;
+	border: 1px solid #555;
+	max-width: 100px;
+	min-width: 80px;
+	width: 100px;
+	margin-right: 10px;
+	padding: 5px;
+	text-align: center;
+	display: flex;
+    align-items: center;
+	justify-content: center;
+
+}
+.many_zon {
+	/*background-color: #555;*/
+	border: 0px solid #555;
+	max-width: 100px;
+	min-width: 80px;
+	width: 100px;
+	margin-right: 10px;
+	padding: 0px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.text_zon {
+	color: cyan;
+	font-size: 14px;
+	font-family:Georgia, Times, "Times New Roman", serif;
+}
+.gas_list {
+	background-color: white;
+	border: 1px solid #555;
+	max-width: 100px;
+	min-width: 80px;
+	width: 100px;
+	margin-right: 10px;
+	padding: 5px;
+	text-align: center;
+}
+.gas_list_zon {
+	background-color: white;
+	border: 1px solid #555;
+	max-width: 100px;
+	min-width: 80px;
+	
+	margin-right: 0px;
+	padding: 5px;
+	text-align: center;
+}
+#first_date {
+	max-width: 100px;
+	min-width: 85px;
+}
+#first_title {
+	max-width: 100px;
+	min-width: 85px;
+}

@@ -1,0 +1,213 @@
+
+.sait_name, .sait_name:hover {
+  background: #555; 
+  text-decoration: none; /*убираем подчеркивание текста ссылок*/
+  color:rgb(36, 238, 10); /*меняем цвет ссылок*/
+  font-size: large;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none; /*убираем подчеркивание текста ссылок*/
+}
+
+a:hover {
+  text-decoration: none; /*убираем подчеркивание текста ссылок*/
+}
+
+.menu_ul {
+    list-style: none; /*убираем маркеры списка*/
+    margin: 0; /*убираем отступы*/
+    padding-left: 0; /*убираем отступы*/
+    margin-top:5px; /*делаем отступ сверху*/
+    background:#555; /*добавляем фон всему меню*/
+    min-height: 25px; /*задаем высоту*/
+    z-index: 9005;
+    
+  }
+
+.menu_ul_horizontal {
+    list-style: none; /*убираем маркеры списка*/
+    margin: 0; /*убираем отступы*/
+    padding-left: 0; /*убираем отступы*/
+    margin-top:5px; /*делаем отступ сверху*/
+    background:#555; /*добавляем фон всему меню*/
+    min-height: 25px; /*задаем высоту*/
+    z-index: 9004;
+  }
+.menu_ul_horizontal_child {
+    list-style: none; /*убираем маркеры списка*/
+    margin: 0; /*убираем отступы*/
+    padding-left: 0; /*убираем отступы*/
+    margin-top:5px; /*делаем отступ сверху*/
+    background: #555; /*добавляем фон всему меню*/
+    min-height: 25px; /*задаем высоту*/
+    z-index: 9005;
+  }
+.menu_ul_horizontal_child_2 {
+    list-style: none; /*убираем маркеры списка*/
+    margin: 0; /*убираем отступы*/
+    padding-left: 0; /*убираем отступы*/
+    margin-top:5px; /*делаем отступ сверху*/
+    background: #555; /*добавляем фон всему меню*/
+    min-height: 25px; /*задаем высоту*/
+    z-index: 9005;
+  }
+
+  .menu_a {
+    text-decoration: none; /*убираем подчеркивание текста ссылок*/
+    background:#555; /*добавляем фон к пункту меню*/
+    color:#fff; /*меняем цвет ссылок*/
+    padding:0px 5px; /*добавляем отступ*/
+    font-family: arial; /*меняем шрифт*/
+    line-height:25px; /*ровняем меню по вертикали*/
+    display: block; 
+    border-right: 1px solid #677B27; /*добавляем бордюр справа*/
+   
+    -moz-transition: all 0.3s 0.01s ease; /*делаем плавный переход */
+    -o-transition: all 0.3s 0.01s ease;
+    -webkit-transition: all 0.3s 0.01s ease;
+  }
+
+  .menu_a_nameuser, .menu_a_nameuser:hover {
+    text-decoration: none; /*убираем подчеркивание текста ссылок*/
+    background:#555; /*добавляем фон к пункту меню*/
+    /*color:rgb(250, 123, 3); /*меняем цвет ссылок  #ffa500*/
+    color: #ffae00;
+    padding:0px 5px; /*добавляем отступ*/
+    font-family: arial; /*меняем шрифт*/
+    line-height:25px; /*ровняем меню по вертикали*/
+    display: block; 
+    border-right: 1px solid #677B27; /*добавляем бордюр справа*/
+   
+  }
+
+  .sub_menu_a {
+    border-top: 1px solid #677B27;
+    border-bottom: 1px solid #677B27; /* добавляем бордюр снизу в выпадающем меню*/
+  }
+
+  .menu_a:hover {
+   
+    color:#fff; /*меняем цвет ссылок*/
+    padding:0px 5px; /*добавляем отступ*/
+    font-family: arial; /*меняем шрифт*/
+    line-height:25px; /*ровняем меню по вертикали*/
+    display: block; 
+    border-right: 1px solid #677B27; /*добавляем бордюр справа*/
+   
+    background:#9B20FF;/*добавляем эффект при наведении*/
+  }
+  .menu_li {
+    float:left; /*Размещаем список горизонтально для реализации меню*/
+    position:relative; /*задаем позицию для позиционирования*/
+  }
+  .menu_li_g {
+    float:none; /*Размещаем список горизонтально для реализации меню*/
+    position:relative; /*задаем позицию для позиционирования*/
+    background-color: rgb(5, 5, 5);
+  }
+       
+      /*Стили для скрытого выпадающего меню*/
+      .menu_li > .menu_ul {
+          position:absolute;
+          top:20px;
+          display:none;   
+      }
+       
+      /*Делаем скрытую часть видимой*/
+      .menu_li:hover > .menu_ul {
+          display:block; 
+          width:280px;  /*Задаем ширину выпадающего меню*/    
+          background-color: rgb(5, 5, 5);  
+      }
+     .menu_li:hover > .menu_ul > .menu_li {
+          float:none; /*Убираем горизонтальное позиционирование*/
+          background-color: rgb(5, 5, 5);  
+      }
+
+      .menu_li:active > .menu_ul {
+        position:absolute;
+        top:20px;
+        display:none; 
+       
+          
+    }
+    /*--------------------------------------------------------------*/
+     /*Стили для скрытого выпадающего меню*/
+.menu_ul > .menu_li_g > .menu_ul_horizontal {
+      position:absolute;
+      top:20px;
+      left: 280px;
+      display:none;   
+      
+  }
+   
+  /*Делаем скрытую часть видимой*/
+.menu_ul:hover > .menu_li_g:hover > .menu_ul_horizontal {
+      display:block; 
+      top: -29px;
+      width:250px;  /*Задаем ширину выпадающего меню*/    
+      right: 100px;
+      background-color: rgb(5, 5, 5);  
+  }
+.menu_ul:hover > .menu_li_g:hover > .menu_ul_horizontal > .menu_li_gas {
+      float:none; /*Убираем горизонтальное позиционирование*/
+      background-color: rgb(5, 5, 5);  
+  }
+.menu_li:active > .menu_ul_horizontal {
+    position:absolute;
+    top:20px;
+    display:block; 
+}
+
+ /*--------------------------------------------------------------*/
+.menu_ul > .menu_li_g > .menu_ul_horizontal > .menu_li_gas > .menu_ul_horizontal_child {
+  position:absolute;
+  top:20px;
+  left: 250px;
+  display:none;   
+  
+}
+/*Делаем скрытую часть видимой*/
+.menu_ul:hover > .menu_li_g:hover > .menu_ul_horizontal > .menu_li_gas:hover > .menu_ul_horizontal_child {
+  display:block; 
+  top: -5px;
+  width:110px;  /*Задаем ширину выпадающего меню*/    
+  right: 100px;
+  background-color: rgb(5, 5, 5);  
+}
+.menu_ul:hover > .menu_li_g:hover > .menu_ul_horizontal > .menu_li_gas:hover > .menu_ul_horizontal_child > .menu_li_gas_child {
+  float:none; /*Убираем горизонтальное позиционирование*/
+  background-color: rgb(5, 5, 5);  
+}
+.menu_li:active > .menu_ul_horizontal_child {
+position:absolute;
+top:20px;
+display:block; 
+}
+/*--------------------------------------------------------------*/
+.menu_ul > .menu_li_g > .menu_ul_horizontal > .menu_li_gas > .menu_ul_horizontal_child_2 {
+  position:absolute;
+  top:20px;
+  left: 250px;
+  display:none;   
+  
+}
+/*Делаем скрытую часть видимой*/
+.menu_ul:hover > .menu_li_g:hover > .menu_ul_horizontal > .menu_li_gas:hover > .menu_ul_horizontal_child_2 {
+  display:block; 
+  top: 46px;
+  width:110px;  /*Задаем ширину выпадающего меню*/    
+  right: 100px;
+  background-color: rgb(5, 5, 5);  
+}
+.menu_ul:hover > .menu_li_g:hover > .menu_ul_horizontal > .menu_li_gas:hover > .menu_ul_horizontal_child_2 > .menu_li_gas_child {
+  float:none; /*Убираем горизонтальное позиционирование*/
+  background-color: rgb(5, 5, 5);  
+}
+.menu_li:active > .menu_ul_horizontal_child_2 {
+position:absolute;
+top:20px;
+display:block; 
+}

@@ -1,0 +1,93 @@
+{% extends "my_gkp/layout.html" %}
+{% load static %}
+
+{% block script %}
+     <script src="{% static 'my_gkp/inbox39.js' %}" type="module"></script>
+{% endblock %}
+
+{% block body %}
+<div class="indicator">
+<form class="contact_form" action="#" method="post" name="contact_form">
+    {% csrf_token %}
+    <ul>
+        <li>
+             <h2 id="name_h2">Інтернет</h2>
+             <span class="required_notification">* Поля, обовязкові для заповнення</span>
+        </li>
+        
+         <!--   <p id="message_ok"><b>{{ message_ok }}</b></p>
+            <p id="message_err"><b>{{ message_err }}</b></p>
+            -->
+        <li>
+            <h6 id="name_h6">За період</h6>
+            з: <input type="date"  name="date_start" placeholder="date start" id="datestart" required />
+            &nbsp; &nbsp;
+            по: <input type="date"  name="date_end" placeholder="date end" id="dateend" required />
+        </li>
+        
+        <li>
+            <div class="tiktok">
+            <input type="number"  name="internet" placeholder="квартплата" id="tarif" step="0.01" value="{{ last_internet }}" required />
+            <input type="hidden" id="user_id" name="userid" value="{{ user.id }}">
+            </div>
+        </li>
+
+        <!-- You can write hire ehat you want Внесення показників лічильника-->
+        <p id="message_err"><b>{{ mymessage }}</b></p>
+
+        	<button class="submit" type="submit">Зберегти</button>
+        </li>
+    </ul>
+
+    <ul>
+        <li>
+             <h2 id="name_h2">Внесені розрахунки</h2>
+           <!--  {{ sum_year }} -->
+             <span class="required_notification">.</span>
+        </li>
+
+        <li id="listgas_title">
+            <div class="tiktok_title">
+                <div class="gas_title" id="first_title">
+                    Дата внесення
+                </div>  
+                <div class="gas_title">
+                    період з
+                </div>  
+                <div class="gas_title">
+                    період по
+                </div>  
+                <div class="gas_title">
+                    Сума
+                </div>  
+            </div>
+        </li>
+        
+        {% for internet in listinternet %}
+        <li id="listgas">
+            <div class="tiktok">
+                <div class="gas_list" id="first_date">
+                    {{ internet.internet_date|date:"d.m.Y" }}
+                </div>
+                <div class="gas_list">
+                    {{ internet.internet_period_start|date:"m.Y" }}
+                </div>
+                <div class="gas_list">
+                    {{ internet.internet_period_end|date:"m.Y" }}
+                </div>
+                <div class="gas_list">
+                    {{ internet.internet_suma }}
+                </div>    
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+
+
+</form>
+</div>
+
+
+<!--======================================================================================================-->
+
+{% endblock %}

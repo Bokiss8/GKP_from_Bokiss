@@ -1,0 +1,99 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{% block title %}my gkp{% endblock %}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet"/>
+        <link href="{% static 'my_gkp/styles26.css' %}" rel="stylesheet">
+        <link href="{% static 'my_gkp/bokiss_menu14.css' %}" rel="stylesheet">
+        <link href="{% static 'my_gkp/pagination1.css' %}" rel="stylesheet">
+        <link href="{% static 'my_gkp/indicator19.css' %}" rel="stylesheet" >
+       
+        <meta name="viewport" content="height=device-height,width=500,user-scalable=yes">
+        {% block script %}
+        {% endblock %}
+    </head>
+    <body>
+
+        &nbsp; <a class="sait_name" href="{% url 'index' %}">Мої ЖКП</a>
+          
+            <div>
+              <ul class="menu_ul">
+                {% if user.is_authenticated %}
+                    <li class="menu_li">
+                        <a class="menu_a_nameuser" href="#"><strong>{{ user.username|capfirst }}</strong></a>
+                    </li>
+                
+                <li class="menu_li">
+                  <a id="posts_sub_menu" class="menu_a" href="#">⛓ Послуга</a>
+                  <ul class="menu_ul">⛓
+                      <!------------------------------------------------------------------------------------------------------->
+                    <li class="menu_li_g"><a id="gas" class="menu_a sub_menu_a" href="##">Газ</a>⛓
+                        <ul class="menu_ul_horizontal">⛓
+                            <li class="menu_li_gas"><a id="indicator_gas" class="menu_a sub_menu_a" href="##">Внести показники лічильника</a>⛓</li>
+                            <li class="menu_li_gas"><a id="list_gas" class="menu_a sub_menu_a" href="##">Перегляд даних</a>⛓</li>
+                            <li class="menu_li_gas"><a id="import_gas" class="menu_a sub_menu_a" href="##">Доставка газу</a>⛓</li>
+                        </ul>
+                    </li>
+                    <!------------------------------------------------------------------------------------------------------->
+                    <li class="menu_li_g"><a id="res" class="menu_a sub_menu_a" href="#">Електроенергія</a>⛓
+                        <ul class="menu_ul_horizontal">⛓
+                            <li class="menu_li_gas"><a id="indicator_res" class="menu_a sub_menu_a" href="#">Внести показники лічильника</a>⛓
+                                <ul class="menu_ul_horizontal_child">⛓
+                                    <li class="menu_li_gas_child"><a id="indicator_res_1" class="menu_a sub_menu_a" href="#">Однозонний</a>⛓</li>
+                                    <li class="menu_li_gas_child"><a id="indicator_res_2" class="menu_a sub_menu_a" href="#">Двузонний</a>⛓</li>
+                                    <li class="menu_li_gas_child"><a id="indicator_res_3" class="menu_a sub_menu_a" href="#">Тризонний</a>⛓</li>
+                                </ul>
+                            </li>
+                            <li class="menu_li_gas"><a id="allposts2" class="menu_a sub_menu_a" href="#">Перегляд даних</a>⛓
+                                <ul class="menu_ul_horizontal_child_2">⛓
+                                    <li class="menu_li_gas_child"><a id="list_res_1" class="menu_a sub_menu_a" href="#">Однозонний</a>⛓</li>
+                                    <li class="menu_li_gas_child"><a id="list_res_2" class="menu_a sub_menu_a" href="#">Двузонний</a>⛓</li>
+                                    <li class="menu_li_gas_child"><a id="list_res_3" class="menu_a sub_menu_a" href="#">Тризонний</a>⛓</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <!------------------------------------------------------------------------------------------------------->
+                    <li class="menu_li_g"><a id="water" class="menu_a sub_menu_a" href="#3">Водопостачання (водовідведення)</a>⛓
+                         <ul id="ul_water" class="menu_ul_horizontal">⛓
+                            <li class="menu_li_gas"><a id="indicator_water" class="menu_a sub_menu_a" href="#">Внести показники лічильника</a>⛓</li>
+                            <li class="menu_li_gas"><a id="list_water" class="menu_a sub_menu_a" href="#">Перегляд даних</a>⛓</li>
+                        </ul>
+                    </li>
+                    <li class="menu_li"><a id="indicator_rent" class="menu_a sub_menu_a" href="#">Квартплата</a>⛓</li>
+                    <li class="menu_li"><a id="trash" class="menu_a sub_menu_a" href="#">Вивезення побутових відходів</a>⛓</li>
+                    <li class="menu_li"><a id="internet" class="menu_a sub_menu_a" href="#">Плата за інтернет</a>⛓</li>
+                </ul>
+                </li>
+                {% else %}
+                <li class="menu_li">
+                    <a id="not_authenticated" class="menu_a" href="{% url 'index' %}"></a>
+                </li>
+                {% endif %}
+                {% if user.is_authenticated %}
+                    <li class="menu_li">
+                        <a id="home" class="menu_a" href="{% url 'index' %}">Головна</a>
+                    </li>
+                    <li class="menu_li">
+                        <a class="menu_a" href="{% url 'logout' %}">Вихід</a>
+                    </li>
+                {% else %}
+                    <li class="menu_li">
+                        <a class="menu_a" href="{% url 'login' %}">Вхід</a>
+                    </li>
+                    <li class="menu_li">
+                        <a class="menu_a" href="{% url 'register' %}">Реєстрація</a>
+                    </li>
+                {% endif %}
+              </ul>
+            </div>
+        
+        <div class="body">
+            {% block body %}
+            {% endblock %}
+        </div>
+    </body>
+</html>

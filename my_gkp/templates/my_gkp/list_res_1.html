@@ -1,0 +1,80 @@
+{% extends "my_gkp/layout.html" %}
+{% load static %}
+
+{% block script %}
+     <script src="{% static 'my_gkp/inbox39.js' %}" type="module"></script>
+{% endblock %}
+
+{% block body %}
+<div class="indicator">
+<form class="contact_form" action="#" method="post" name="contact_form">
+    {% csrf_token %}
+    <ul>
+        <li>
+             <h2 id="name_h2">Внесені показники лічильника по електроенергії</h2>
+             <span class="required_notification">.</span>
+        </li>
+
+        <li id="listgas_title">
+            <div class="tiktok_title">
+                <div class="gas_title" id="first_title">
+                    Дата внесення
+                </div>  
+                <div class="gas_title">
+                    період з
+                </div>  
+                <div class="gas_title">
+                    період по
+                </div>  
+                <div class="gas_title">
+                    Показник лічильника попередній
+                </div>  
+                <div class="gas_title">
+                    Показник лічильника поточний
+                </div>  
+                <div class="gas_title">
+                    Різниця (квт)
+                </div>  
+                <div class="gas_title">
+                    Тариф
+                </div>  
+                <div class="gas_title">
+                    Сума
+                </div>  
+            </div>
+        </li>
+        
+        {% for res in listres %}
+        <li id="listgas">
+            <div class="tiktok">
+                <div class="gas_list" id="first_date">
+                    {{ res.res_date|date:"d.m.Y" }}
+                </div>
+                <div class="gas_list">
+                    {{ res.res_period_start|date:"m.Y" }}
+                </div>
+                <div class="gas_list">
+                    {{ res.res_period_end|date:"m.Y" }}
+                </div>
+                <div class="gas_list">
+                    {{ res.res_last }}
+                </div>
+                <div class="gas_list">
+                    {{ res.res_new }}
+                </div>
+                <div class="gas_list">
+                    {{ res.res_rezult }}
+                </div>
+                <div class="gas_list">
+                    {{ res.res_tarif }}
+                </div>
+                <div class="gas_list">
+                    {{ res.res_suma|floatformat:2 }}
+                </div>    
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</form>
+</div>
+{% endblock %}

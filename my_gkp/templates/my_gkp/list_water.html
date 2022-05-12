@@ -1,0 +1,86 @@
+{% extends "my_gkp/layout.html" %}
+{% load static %}
+
+{% block script %}
+     <script src="{% static 'my_gkp/inbox39.js' %}" type="module"></script>
+{% endblock %}
+
+{% block body %}
+<div class="indicator">
+<form class="contact_form_3" action="#" method="post" name="contact_form">
+    {% csrf_token %}
+    <ul>
+        <li>
+             <h2 id="name_h2">Внесені показники лічильника по водопостачанню</h2>
+             <span class="required_notification">.</span>
+        </li>
+
+        <li id="listgas_title">
+            <div class="tiktok_title">
+                <div class="gas_title" id="first_title">
+                    Дата внесення
+                </div>  
+                <div class="gas_title">
+                    період з
+                </div>  
+                <div class="gas_title">
+                    період по
+                </div>  
+                <div class="gas_title">
+                    Показник лічильника попередній
+                </div>  
+                <div class="gas_title">
+                    Показник лічильника поточний
+                </div>  
+                <div class="gas_title">
+                    Різниця (куб)
+                </div>  
+                <div class="gas_title">
+                    Тариф
+                </div>  
+                <div class="gas_title">
+                    Абонплата
+                </div>  
+                <div class="gas_title">
+                    Сума
+                </div>  
+            </div>
+        </li>
+        
+        {% for water in listwater %}
+        <li id="listgas">
+            <div class="tiktok">
+                <div class="gas_list" id="first_date">
+                    {{ water.water_date|date:"d.m.Y" }}
+                </div>
+                <div class="gas_list">
+                    {{ water.water_period_start|date:"m.Y" }}
+                </div>
+                <div class="gas_list">
+                    {{ water.water_period_end|date:"m.Y" }}
+                </div>
+                <div class="gas_list">
+                    {{ water.water_last }}
+                </div>
+                <div class="gas_list">
+                    {{ water.water_new }}
+                </div>
+                <div class="gas_list">
+                    {{ water.water_rezult }}
+                </div>
+                <div class="gas_list">
+                    {{ water.water_tarif }}
+                </div>
+                <div class="gas_list">
+                    {{ water.water_abonplata }}
+                </div>    
+                <div class="gas_list">
+                    {{ water.water_suma|floatformat:2 }}
+                </div>    
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</form>
+</div>
+{% endblock %}

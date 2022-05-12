@@ -1,0 +1,45 @@
+{% extends "my_gkp/layout.html" %}
+{% load static %}
+
+{% block script %}
+     <script src="{% static 'my_gkp/inbox39.js' %}" type="module"></script>
+{% endblock %}
+
+{% block body %}
+<div class="indicator">
+<form class="contact_form" action="#" method="post" name="contact_form">
+    {% csrf_token %}
+    <ul>
+        <li>
+             <h2 id="name_h2">Внесення показників лічильника по водопостачанню</h2>
+             <span class="required_notification">* Поля, обовязкові для заповнення</span>
+        </li>
+        <!--   <p id="message_ok"><b>{{ message_ok }}</b></p>
+            <p id="message_err"><b>{{ message_err }}</b></p>
+            -->
+        <li>
+                <h6 id="name_h6">За період</h6>
+                з: <input type="date"  name="date_start" placeholder="date start" id="datestart" required />
+                &nbsp; &nbsp;
+                по: <input type="date"  name="date_end" placeholder="date end" id="dateend" required />
+                &nbsp;
+                <input type="number"  name="abonplata" placeholder="абонплата" id="tarif" title="абонплата" step="0.01" />
+        </li>
+            
+        <li>
+                <div class="tiktok">
+                <input type="number"  name="indicator_last" placeholder="попередній" id="indicator_last" value="{{ last_indicator }}" required />
+                <input type="number"  name="indicator_new" placeholder="поточний" id="indicator_new" required />
+                <input type="number"  name="tarif" placeholder="тариф" id="tarif" step="0.01" value="{{ last_tarif }}" required />
+                <input type="hidden" id="user_id" name="userid" value="{{ user.id }}">
+                </div>
+        </li>
+    
+            <!-- You can write hire ehat you want Внесення показників лічильника-->
+    
+                <button class="submit" type="submit">Зберегти</button>
+        </li>
+    </ul>
+    </form>
+    </div>
+    {% endblock %}
